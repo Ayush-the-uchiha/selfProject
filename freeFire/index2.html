@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Anime</title>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+        }
+
+        body{
+            background-color: black;
+        }
+        .container{
+            /* border: 1px solid red; */
+            width: 95vw;
+            height: 95vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .img, img{
+            /* border: 1px solid blue; */
+            width: 350px;
+            height: 350px;
+        }
+        .form{
+            /* border: 1px solid green; */
+            height: 20px;
+            display: flex;
+            justify-content: center;
+        }
+
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="box">
+            <div class="img">
+                <img src="heart1.png" id="imgs" alt="">
+            </div>
+            <div class="form">
+                <select id="cars" name="carlist" onchange="good()">
+                    <option value="144">144p</option>
+                    <option value="240">240p</option>
+                    <option value="480">480p</option>
+                    <option value="720">720p</option>
+                    <option value="1080">1080p</option>
+                </select>
+            </div>
+        </div>
+    </div>
+</body>
+
+<script>
+    function good(){
+        var selectElement = document.getElementById("cars");
+        var value = selectElement.value;
+        var img = document.getElementById("imgs");
+
+        if(value == 144)
+        {
+            img.src = "heart1.png";
+        }
+        else if(value == 240)
+        {
+            img.src = "heart2.jpg";
+        }
+        else if(value == 480){            
+            img.src = "heart3.jpg";
+        }
+        else if(value == 720){            
+            img.src = "heart4.jpg";
+        }
+        else{
+            img.src = "freefire.jpg";
+            img.setAttribute(style,"transform:scale(2);")
+        }
+    }
+</script>
+</html>
