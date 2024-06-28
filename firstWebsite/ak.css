@@ -1,0 +1,275 @@
+* {
+    padding: 0px;
+    margin: 0px;
+    font-family: "bookman old style", cursive;
+    /* box-sizing: border-box; */
+}
+
+html {
+    font-size: large;
+}
+
+body {
+    background-color: black;
+    color: white;
+    background: url('papita.jpg') no-repeat center center/cover; 
+    background-attachment: fixed;
+}
+
+/* Use of header */
+header {
+    /* border: 1px solid red; */
+    margin: 12px 14px;
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: column;
+    /* position: fixed; */
+}
+
+/* Navigation bar */
+
+.nav {
+    display: flex;
+    margin: 12px 14px;
+    flex-wrap: wrap;
+    /* border: 1px solid red; */
+}
+
+/* Navigation bar li */
+
+.nav li {
+    padding: 5px;
+    list-style-type: none;
+    overflow: auto;
+    outline: none;
+}
+
+/* Navigation bar li */
+
+
+.nav li a {
+    text-decoration: none;
+    font-size: 20px;
+    color: white;
+    padding: 5px;
+    margin: 2px;
+    text-shadow: 4px 4px 5px black;
+    transition: all 0.3s ease-in-out;
+}
+.nav li:hover a{
+    /* color: rgb(156, 152, 152);
+    background-color: red; */
+    color: red;
+    transform: scale(2);
+}
+
+h1 {
+    font-size: 40px;
+}    
+p {
+    margin-top: 25px;
+}
+
+.jai{
+    width: 55px;
+    height: 55px;
+    position: absolute;
+    top: 15px;
+    right: 20px;
+    border-radius: 50%;
+    padding: 3px;
+    background-image: linear-gradient( rgb(252, 178, 40), red,  rgb(255, 0, 255), green,rgb(33, 145, 249));
+    box-shadow: 1px 1px 10px black;
+    transition: all 50ms ease-in-out;
+}
+#profile {
+    width: 55px;
+    height: 55px;
+    position: absolute;
+    border-radius: 50%;
+    top: auto;
+    left: auto;
+    background-color: #f3f3f3;
+}
+.jai:hover{
+    transform: scale(0.9);
+}
+
+/* Section style */
+section {
+    display: flex;
+    flex-direction: column;
+    /* border: 3px solid red; */
+    height: 70em;
+    margin: 100px 60px;
+    text-align: justify;
+    word-wrap: wrap;
+    padding: 25px;
+    text-shadow: 4px 4px 5px black;
+    margin-bottom: 60px;
+    /* overflow: auto; */
+}
+h1{
+    text-align: center;
+}
+
+@media screen and (max-width:500px) {
+    section{
+        margin: 100px 20px !important;
+        padding: 10px;
+        height: 90em;
+    }
+    .container{
+        /* display: flex;
+        flex-wrap: wrap;
+        padding: 5px;
+        border: 2px solid blue;
+        justify-content: space-evenly; */
+        display: flex;
+    }
+    /* Image + description */
+    .it{
+        /* border: 1px solid black; */
+        display: inline-block;
+        margin-top: 5px;
+    }
+    .item{
+        /* width: 150px;
+        height: 250px;
+        margin: 5px;
+        border: 1px solid black; */
+        width: 150px !important;
+        height: 170px !important;
+        box-sizing: border-box;
+    }
+    
+    /* Descriptions */
+    .ab{
+        text-align: justify;
+        font-size: 20px;
+    }
+    .desc{
+        text-align: center;
+        /* border: 1px solid black; */
+        text-wrap: wrap;
+        width: 150px !important;
+    }
+    .contact{
+        height: 500px !important;
+    } 
+    #about{
+        align-items:left !important;  
+    }
+}
+.footer{
+    /* border: 3px solid red; */
+    display: flex;
+    align-items: center;
+    min-height: 50px;   
+    margin-top: 0px;  
+}
+.jack{
+    height: 900px;;
+}
+
+/* Image gallery started here. */
+
+/* This is container of whole gallery */
+.container{
+    display: flex;
+    flex-wrap: wrap;
+    padding: 5px;
+    /* border: 2px solid blue; */
+    justify-content: space-evenly;
+}
+
+/* Image + description */
+.it{
+    /* border: 1px solid black; */
+    display: inline-block;
+    margin-top: 35px;
+    box-sizing: border-box;
+    /* filter: blur(1px); */
+    /* transition: all 1s ease-in-out; */
+}
+
+/* Images */
+.item{
+    width: 350px;
+    height: 500px;
+    border: 1px solid black;
+}
+
+/* Descriptions */
+.ab{
+    text-align: justify;
+    font-size: 20px;
+}
+.desc{
+    box-sizing: border-box;
+    text-align: center;
+    /* border: 1px solid black; */
+    text-wrap: wrap;
+    word-wrap: wrap;
+    width: 350px;
+    background-color: transparent;
+    backdrop-filter: blur(10px);
+    -webkit-margin-collapse: collapse;
+    padding: 5px;
+}
+.img{
+    color: white;
+}
+.img:hover{
+    transform: scale(1.01);
+}
+.img:hover .it{
+    outline: 1px outset;
+    outline-color: black;
+    box-shadow: 2px 3px 25px rgb(0, 0, 0);
+}
+
+.contact{
+    /* border: 1px solid red; */
+    border-top: 2px solid black;
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+    background-color: white ;
+    columns: black;
+    padding: 30px;
+    height: 150px;
+    text-align: center;
+    /* flex-direction: column; */
+}
+#contact{
+    /* border: 3px solid blue; */
+    width: 30%;
+    display: flex;
+    color: black;
+    padding: 20px;
+    margin: 10px;
+    justify-content: space-evenly;
+    align-items: center;
+    /* flex-wrap: wrap; */
+    /* flex-direction: column; */
+}
+#contact a,.logo{
+    width: 30px;
+    height: 40px;
+    margin-top: 10px;
+    margin-right: 10px;
+    /* display: inline-block; */
+}
+
+.logo:hover{
+    transform: scale(1.1);
+}
+#about{
+    display: flex;
+    align-items: center;
+    color: black;
+}
+.as{
+    color: black;
+}

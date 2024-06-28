@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ayush's website</title>
+    <link rel="stylesheet" href="ak.css">
+
+</head>
+
+<body>
+    <header>
+        <ul class="nav">
+            <li class="active"><a href="index.html">Home</a></li>
+            <li><a href="#image_gallery">About us</a></li>
+            <li><a href="#">Services</a></li>
+            <li><a href="#contact">Contact us</a></li>
+        </ul>
+        <div class="jai">
+            <a href="ayush.jpg" target="_blank" id="k"><img src="ayush.jpg" alt="profile" id="profile"></a>
+        </div>
+    </header>
+    <section>
+        <h1>Welcome to my website</h1>
+        <p>
+           <span style="font-size: 30px; font-weight: bold;">Hello,</span> 
+           <span  style="font-size: 30px; font-weight: bold;" id="name">guys</span> this is my first website to show you. I am Ayush kumar and I am a student of computer science. Rigth now I am interseted in web designing. But still I wanna be a cool software developer. My typing speed is at average level. And my coding skill still very disappointing but I will try my best to overcome my logic building problem. The date of hosting this website is 17/oct/2023. Right now I am still a learner. So please if you notice any issue on this webpage then please message me. For contacting please tap on (Contact us) on navigation bar at the top of this page..
+            
+        </p>
+        <note style="text-align: right;">~Thank you, Ayush kumar</note> 
+        <!-- <signature style="text-align: right;">Ayush kumar</signature> -->
+    </section>
+    <!-- Section ends here. -->
+
+
+    <!-- Image gallery division started here.. -->
+    <div class="container" id="image_gallery">
+        <!-- Ayush's pic -->
+        <a href="ayush.jpg" class="img" target="_blank">
+            <div class="it">
+                <img src="ayush.jpg" alt="ayush" class="item">
+                <div class="desc">
+                    <h2>Ayush bhai</h2>
+                    <p class="ab">Ayush bhai is a good boy. He always obey of his parents and elders</p>                    
+                    <Note style="text-align: right;">~Swayam Ayush bhai</Note>
+                </div>
+            </div>
+        </a>
+        <!-- Car's pic -->
+        <a href="car.jpg" class="img" target="_blank">
+            <div class="it">
+                <img src="car.jpg" alt="car" class="item">                
+                <div class="desc">
+                    <h2>Dream car</h2>
+                    <p class="ab">This car is Ayush bhai's dream car. There are too many car's but this car is speial one for him.</p>
+                    <Note style="text-align: right;">~Swayam Ayush bhai</Note>
+                </div>            
+            </div>
+        </a>
+        <!-- Giyu's pic -->
+        <a href="Giyu_tomiyoka.jpg" class="img" target="_blank">
+            <div class="it">
+                <img src="Giyu_tomiyoka.jpg" alt="car" class="item">
+                <div class="desc">
+                    <h2>Giyu tomiyoka</h2>                
+                    <p class="ab">Giyu tomiyoka is a very cool anime character. He is a awesome swordman who uses water breathing technique and stay very calm in every critical situation. </p>
+                    <Note style="text-align: right;">~Swayam Ayush bhai</Note>
+                </div>   
+            </div>
+        </a>
+        <!-- Hero's pic -->
+        <a href="Hero.png" class="img" target="_blank">
+            <div class="it">
+                <img src="Hero.png" target="_blank" alt="hero" class="item">
+
+                <div class="desc">
+                    <h2>Ayush bhai</h2>                
+                    <p class="ab">Ayush bhai is a good boy.He always obey of his parents and elders</p>
+                    <Note style="text-align: right;">~Swayam Ayush bhai</Note>
+                </div>                    
+            </div>
+        </a>
+    </div>
+    <!-- White space bro -->
+    <div class="white_space" style="height: 500px;"></div>
+    <!-- Contact us -->
+
+    <footer class="contact">
+        <div id="contact">
+
+            <a class="as" href="https://www.facebook.com/profile.php?id=100025658583542" target="_blank">
+                <img class="logo" src="facebook.png" alt="facebook">
+            </a>
+
+            <a class="as" href="https://www.instagram.com/ayush2839e/" target="_blank">
+                <img class="logo" src="instagram-logo.png" alt="facebook">
+            </a>
+        </div>
+        <div id="about">
+            <p style="font-family: bookman old style;">
+               &copy; This is the first webpage and designed by Ayush kumar. 
+                          
+            </p>    
+        </div>
+    </footer>
+    <script>
+        const gen = confirm("Are you a male??");
+        const name1 = prompt("Enter your name please: ");
+
+        if(gen == true){
+            document.getElementById("name").innerHTML = "Mr. " + name1 + " bhaiya";
+        }
+        else{
+            document.getElementById("name").innerHTML = "Miss " + name1 + " didi";
+        }
+    </script>
+</body>
+
+</html>
