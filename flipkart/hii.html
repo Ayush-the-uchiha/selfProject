@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>aise hi</title>
+    <style>
+        .box{
+            background-color: black;
+            height: 100px;
+            border: 1px solid white;
+            margin: 2px;
+            color: white;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            font-size: larger;
+        }
+        #box2{
+            display: none;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="box" onclick="on()" ondblclick="off()">Click me!</div>
+        <div class="box" id="box2"></div>
+    </div>
+</body>
+<script>
+    let a,b;
+    function on(){
+        let box2 = document.getElementById("box2");
+        box2.style.display = "block";
+    }
+    function off(){
+        let box2 = document.getElementById("box2");
+        box2.style.display = "none";
+    }
+</script>
+</html>
