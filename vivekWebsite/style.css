@@ -1,0 +1,66 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+:root{
+    --gold:#bca858;
+}
+header nav .navbar1{
+    background-color: black;
+    color: white;
+    padding: 10px;
+    font-size: small;
+    display: flex;
+    justify-content: space-around;
+}
+#logo{
+    /* border: 1px solid green; */
+    height: 20px;
+    margin-top: 10px;
+}
+#navbar2{
+   display: flex;
+   margin: 15px;
+   justify-content:space-evenly;
+}
+.optionsBox ul{
+    /* border: 1px solid blue; */
+    display: flex;
+    list-style-type: none;
+    padding: 10px;
+    column-gap: 10px;
+}
+.optionsBox ul li:hover{
+    color: var(--gold);
+    transition: .5s;
+    cursor: pointer;
+}
+.optionsBox ul li:first-child::after{
+    content: "";
+    border: 1px solid var(--gold);
+    display: flex;
+}
+
+#navbar2 #bookNow{
+    font-size: 12px;
+    padding: 5px 20px;
+    border-radius: 25px;
+    border: 1px solid #252525;
+    transition: 1.1s;
+}
+#navbar2 #bookNow:hover{
+    background-color: var(--gold);
+    color: white;
+    border :1px solid white;
+}
+
+/* Header finish and Section start */
+
+.container{
+
+}
+
+.container img{
+    height: 85vh;
+    width: 100%;
+}
