@@ -110,6 +110,7 @@ header nav .navbar1{
     padding: 20px;
     display: flex;
     justify-content: center;
+    /* flex-wrap: wrap; */
 }
 .container2{
     /* border: 1px solid yellow; */
@@ -118,6 +119,7 @@ header nav .navbar1{
     display: flex;
     justify-content: center;
     gap: 20px;
+    /* flex-wrap: wrap; */
 }
 /* Three boxes of row 3 */
 .boxOfsec2{
@@ -217,8 +219,8 @@ header nav .navbar1{
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    width: 220px;
-    height: 200px;
+    width: 185px;
+    height: 185px;
     padding: 20px;
     gap: 5px;
     transition: 0.5s;
@@ -229,8 +231,8 @@ header nav .navbar1{
 .card p{
     /* border: 1px solid orange; */
     text-align: center;
-    padding: 5px 15px;
-    line-height: 20px;
+    padding: 0px 5px;
+    /* line-height: 5px; */
 }
 
 
