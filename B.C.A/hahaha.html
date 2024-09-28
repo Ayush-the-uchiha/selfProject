@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>event bubblingf</title>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+        }
+        .parent{
+            padding: 20px;
+            background-color: rgb(213, 52, 52);
+        }
+        .childbox{
+            padding: 20px;
+            background-color: rgb(21, 65, 239);
+        }
+        .child{
+            padding: 20px;
+            background-color: rgb(27, 235, 65);
+        }
+    </style>
+</head>
+<body>
+    <div class="parent">
+        <div class="childbox">
+            <div class="child">I am a box.</div>
+            
+        </div>
+    </div>
+</body>
+<script>
+    let a,b,c;
+    a = document.querySelector(".parent");
+    b = document.querySelector(".childbox");
+    c = document.querySelector(".child");
+
+    a.addEventListener("click",(e)=>{
+        alert("Hey i am parent");
+    })
+    b.addEventListener("click",(e)=>{
+        alert("i am child box");
+    })
+    c.addEventListener("click",(e)=>{
+        e.stopPropagation();
+        alert("i am a child ");
+    })
+</script>
+</html>

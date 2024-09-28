@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Calculator</title>
+    <style>
+        body {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            background-color: aqua ;
+            margin: 0;
+        }
+        .calculator {
+            border: 1px solid #ccc;
+            border-radius: 8px;
+            overflow: hidden;
+            box-shadow: 0 0 10px rgba(0,0,0,0.1);
+        }
+        .calculator-screen {
+            background-color: black;
+            color: white;
+            padding: 20px;
+            text-align: right;
+            font-size: 2em;
+            border-bottom: 1px solid #ccc;
+        }
+        .calculator-buttons {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+        }
+        .calculator-button {
+            padding: 20px;
+            font-size: 1.5em;
+            border: 1px solid #ccc;
+            border-top: none;
+            background-color: white;
+            cursor: pointer;
+            text-align: center;
+        }
+        .calculator-button.operator {
+            background-color: orange;
+            color: black;
+        }
+        .calculator-button.double {
+            grid-column: span 2;
+        }
+        .calculator-button.double.operator {
+            grid-column: span 2;
+        }
+        .calculator-button:active {
+            background-color: #e0e0e0;
+        }
+    </style>
+</head>
+<body>
+    <div class="calculator">
+        <div id="display" class="calculator-screen">0</div>
+        <div class="calculator-buttons">
+            <div class="calculator-button double operator" onclick="clearDisplay()">C</div>
+            <div class="calculator-button operator" onclick="appendCharacter('/')">/</div>
+            <div class="calculator-button operator" onclick="appendCharacter('*')">*</div>
+            <div class="calculator-button operator" onclick="appendCharacter('-')">-</div>
+            <div class="calculator-button" onclick="appendCharacter('7')">7</div>
+            <div class="calculator-button" onclick="appendCharacter('8')">8</div>
+            <div class="calculator-button" onclick="appendCharacter('9')">9</div>
+            <div class="calculator-button operator" onclick="appendCharacter('+')">+</div>
+            <div class="calculator-button" onclick="appendCharacter('4')">4</div>
+            <div class="calculator-button" onclick="appendCharacter('5')">5</div>
+            <div class="calculator-button" onclick="appendCharacter('6')">6</div>
+            <div class="calculator-button double operator" onclick="calculateResult()">=</div>
+            <div class="calculator-button" onclick="appendCharacter('1')">1</div>
+            <div class="calculator-button" onclick="appendCharacter('2')">2</div>
+            <div class="calculator-button" onclick="appendCharacter('3')">3</div>
+            <div class="calculator-button double" onclick="appendCharacter('0')">0</div>
+            <div class="calculator-button" onclick="appendCharacter('.')">.</div>
+        </div>
+    </div>
+
+    <script>
+        let display = document.getElementById('display');
+        let currentInput = '';
+
+        function appendCharacter(character) {
+            if (currentInput.length === 0 && ['/', '*', '-', '+'].includes(character)) return;
+            if (currentInput.length === 0 && character === '.') return;
+            currentInput += character;
+            display.innerText = currentInput;
+        }
+
+        function clearDisplay() {
+            currentInput = '';
+            display.innerText = '0';
+        }
+
+        function calculateResult() {
+            try {
+                currentInput = eval(currentInput).toString();
+                display.innerText = currentInput;
+            } catch (e) {
+                display.innerText = 'Error';
+                currentInput = '';
+            }
+        }
+    </script>
+</body>
+</html>
