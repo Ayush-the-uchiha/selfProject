@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Free Fire</title>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+        }
+
+        body{
+            background-color: black;
+        }
+        .container{
+            /* border: 1px solid red; */
+            width: 95vw;
+            height: 95vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .img, img{
+            /* border: 1px solid blue; */
+            width: 350px;
+            height: 350px;
+            padding-bottom: 10px;
+        }
+        .form{
+            /* border: 1px solid green; */
+            height: 20px;
+            display: flex;
+            justify-content: center;
+        }
+
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="box">
+            <div class="img">
+                <img src="120.jpg" id="imgs" alt="">
+            </div>
+            <div class="form">
+                <select id="cars" name="carlist" onchange="good()">
+                    <option value="240">240p</option>
+                    <option value="480">480p</option>
+                    <option value="720">720p</option>
+                    <option value="1080">1080p</option>
+                    <option value="4k">4k</option>
+                </select>
+            </div>
+        </div>
+    </div>
+</body>
+
+<script>
+    function good(){
+        var selectElement = document.getElementById("cars");
+        var value = selectElement.value;
+        var img = document.getElementById("imgs");
+
+        if(value == 240)
+        {
+            img.src = "240p.jpg";
+        }
+        else if(value == 480){            
+            img.src = "480p.jpg";
+        }
+        else if(value == 720){            
+            img.src = "720p.jpg";
+        }
+        else if(value == 1080){            
+            img.src = "1080p.jpg";
+        }
+        else{
+            img.src = "last.jpg";           
+        }
+    }
+</script>
+</html>
