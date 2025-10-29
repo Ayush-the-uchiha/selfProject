@@ -1,3 +1,4 @@
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -14,41 +15,55 @@
             display: flex;
             justify-content: center;
             align-items: center;
+            background-color: #f3f3f3;
         }
         .container{
-            border: 1px solid red;
+            /* border: 3px solid black; */
+            border: 1px solid white;
+            border-radius: 30px;
             width: 500px;
-            height: 300px;
+            height: 400px;
             display: flex;
             flex-direction: column;
             justify-content: center;
             align-items: center;
             gap: 20px;
+            background-color: white;
         }
         #inputField, button{
             width: 300px;
             height: 30px;
             border-radius: 5px;
         }
-        #inputField::placeholder{
-            padding-left:8px;
+        #inputField{
+            padding-left: 3px ;
+            font-size: medium;
         }
         button{
             color: white;
             background-color: black;
+            font-size: medium;
         }
-
+        button:active{
+            background-color: rgb(19, 19, 19);
+            text-decoration: dotted;
+        }
+        h1{
+            width: 300px;
+            font-size: 26px;
+        }
     </style>
 </head>
 <body>
     <div class="container">
+        <h1 >QR CODE GENERATOR</h1>
         <div class="containerBox">
             <input type="text" id="inputField"> 
         </div>
         <div class="containerBox">
-            <button onclick="generateQRCode()">Encode</button>
+            <button onclick="generateQRCode()">GERNERATE</button>
         </div>
-        <div class="containerBox1">
+        <div id="containerBox1">
             <img src="  " alt="" id="resultContainer">
         </div>
     </div>
