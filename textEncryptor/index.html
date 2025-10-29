@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body {
+            width: 90vw;
+            height: 90vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            background-color: #898282;
+            background-image: url("https://i.pinimg.com/originals/e7/23/54/e723540dd0c92db5c1e13377f7900b5d.jpg");
+            background-repeat: no-repeat;
+            background-position: center;
+            background-attachment: fixed;
+            background-size: cover;
+        }
+
+        .container {
+            background-color: transparent;
+            border: 2px solid rgba(255, 255, 255, 0.589);
+            border-radius: 20px;
+            width: 300px;
+            height: 300px;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            gap: 10px;
+            backdrop-filter: blur(7px);
+        }
+
+        input,
+        #result {
+            height: 25px;
+            width: 250px;
+            display: block;
+            position: relative;
+        }
+
+        #result {
+            border: 1px solid rgba(244, 242, 242, 0.571);
+            padding-right: 5px;
+            height: 30px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            border-radius: 10px;
+        }
+
+        #result1 {
+            color: rgba(255, 255, 255, 0.548);
+            /* border: 1px solid red; */
+            width: 90%;
+            height: 100%;
+            display: flex;
+            align-items: center;
+            /* justify-content: center; */
+            padding-left: 3px;
+            overflow:hidden;
+        }
+
+        input,
+        input:focus,
+        button {
+            background-color: transparent;
+            border-radius: 10px;
+            color: rgba(255, 255, 255, 0.548);
+        }
+
+        #copyBtn {
+            border: none;
+            /* height: 20px; */
+        }
+
+        img {
+            width: 20px;
+            height: 20px;
+            filter: invert(0.7);
+        }
+
+        .buttonContainer {
+            /* border: 1px solid red; */
+            width: 250px;
+            height: 35px;
+            display: flex;
+            justify-content: space-around;
+            align-items: center;
+            padding-top: 5px;
+        }
+
+        .buttonContainer button {
+            height: 90%;
+            border-radius: 10px;
+            padding: 10px 20px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <div class="containerBox">
+            <input type="text" placeholder="Enter Your Message" id="msg" autocomplete="off">
+        </div>
+        <div class="containerBox">
+            <input type="text" placeholder="Enter key number(1-15)" id="shifts" autocomplete="off">
+        </div>
+        <div id="result">
+            <div id="result1"></div>
+            <button onclick="copySkill()" id="copyBtn">
+                <img src="copy2.png" alt="">
+            </button>
+        </div>
+        <div class="buttonContainer">
+            <button onclick="encode()">Encode</button>
+            <button onclick="decode()">Decode</button>
+        </div>
+    </div>
+    <script src="script.js"></script>
+</body>
+
+</html>
