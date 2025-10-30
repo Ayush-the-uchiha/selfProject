@@ -5,4 +5,6 @@ function generateQRCode() {
     }
     let qrContainer = document.getElementById("resultContainer");
     qrContainer.src=`https://api.qrserver.com/v1/create-qr-code/?size=150x150&data=${text}`;
+    document.getElementById("inputField").innerHTML = '';
 }
+
