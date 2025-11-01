@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Text-to-Speech with Voice Selection</title>
+</head>
+<body>
+  <h1>Text-to-Speech with Voice Selection</h1>
+  <textarea id="text-to-speak" rows="4" cols="50"></textarea><br><br>
+  
+  <label for="voice-select">Choose a voice:</label>
+  <select id="voice-select"></select><br><br>
+
+  <button onclick="speakText()">Speak</button>
+
+  <script>
+    // Store available voices
+    let voices = [];
+
+    // Function to load the voices
+    function loadVoices() {
+      voices = window.speechSynthesis.getVoices(); // Get available voices
+      const voiceSelect = document.getElementById("voice-select");
+
+      // Clear the dropdown
+      voiceSelect.innerHTML = '';
+
+      // Populate the dropdown with available voices
+      voices.forEach(voice => {
+        const option = document.createElement("option");
+        option.textContent = voice.name + " (" + voice.lang + ")";
+        option.value = voice.name;
+        voiceSelect.appendChild(option);
+      });
+    }
+
+    // Function to speak the text
+    function speakText() {
+      const text = document.getElementById("text-to-speak").value;
+      const selectedVoice = document.getElementById("voice-select").value;
+
+      // Create a new SpeechSynthesisUtterance with the text to be spoken
+      const speech = new SpeechSynthesisUtterance(text);
+
+      // Find the voice based on the selection
+      const voice = voices.find(v => v.name === selectedVoice);
+      speech.voice = voice; // Set the selected voice
+
+      // Optional: set pitch and rate
+      speech.pitch = 1; // Adjust pitch (0 to 2)
+      speech.rate = 1;  // Adjust rate (0.1 to 10)
+
+      // Speak the text
+      window.speechSynthesis.speak(speech);
+    }
+
+    // Wait for the voices to be loaded, and then populate the dropdown
+    window.speechSynthesis.onvoiceschanged = loadVoices;
+
+    // Initial call to load voices (for browsers that do not trigger onvoiceschanged)
+    loadVoices();
+  </script>
+</body>
+</html>

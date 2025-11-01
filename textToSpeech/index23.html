@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body{
+            width: 100vw;
+            height: 80vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            background-color: rgb(203, 201, 201);
+        }
+        .container{
+            width: 240px;
+            height: 240px;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            gap: 15px;
+            background-color: white;
+            border-radius: 10px;
+        }
+        input{
+            height: 20px;
+            border-radius: 5px;
+        }
+        img{
+            width: 200px;
+            height: 200px;
+            /* border: 1px solid red; */
+            display: none;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <!-- <input type="text" name="speech" id="speech" placeholder="Enter text"> -->
+         <img src="https://m.media-amazon.com/images/M/MV5BZjA0MDgyYmItNzkzMC00OTM2LThlYzktMWMxZWU3ZGNkNDI3XkEyXkFqcGc@._V1_FMjpg_UX1000_.jpg" alt="" id="img">
+        <button id="btn" onclick="speaking()">Start...</button>
+    </div>
+
+    <script>
+        function speaking(){
+            let img = document.getElementById("img").style.display="block";
+           let msg = "ohh Ujjwal, I love you...., Please fuck me baby..., aaahh... aahh... ui... maaa...., marr gayee main toooo..., Ujjwal baby your dick is so big......., fuck me harder....., yes baby...., fuck me harder....., oh god...., aahhh ohhhh yesssss yessss more, fuck mee more....., i am cummingg baby , i am cumming so hard baby........, Ujjwal baby I love you"
+            if ('speechSynthesis' in window) {
+                let speech = new SpeechSynthesisUtterance(msg);
+                speech.lang = "en-US";
+                speech.pitch = 1;
+                speech.rate = 0.8;
+                speech.volume = 1;
+
+                // Get available voices
+                let voices = window.speechSynthesis.getVoices();
+                console.log(speechSynthesis.getVoices().forEach(v => console.log(v.name, v.lang)));
+                // Pick a specific voice by name (if available)
+                let selectedVoice = voices.find(voice => voice.name.includes("Google UK English Female") );
+
+                // Set the selected voice if found
+                if (selectedVoice) {
+                    speech.voice = selectedVoice;
+                }
+
+                // Speak the text
+                window.speechSynthesis.speak(speech);
+            } else {
+                alert("Sorry, your browser does not support text-to-speech!");
+            }
+        }
+
+        // Important: load voices first (some browsers load them asynchronously)
+        window.speechSynthesis.onvoiceschanged = () => {
+            window.speechSynthesis.getVoices();
+        };
+
+        // following code is used to check all the voices
+        // speechSynthesis.getVoices().forEach(v => console.log(v.name, v.lang));
+
+    </script>
+</body>
+</html>
